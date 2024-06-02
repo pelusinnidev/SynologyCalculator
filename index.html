@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurador Synology NAS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bienvenido al Configurador de Synology NAS</h1>
+            <img src="images/synology.jpg" alt="Synology NAS" style="max-width: 100%; height: auto;">
+        </header>
+        <main>
+            <form id="configurator-form">
+                <section>
+                    <h2>Seleccione su Synology NAS</h2>
+                    <label for="nas-model">Modelo:</label>
+                    <select id="nas-model">
+                        <option value="DS224+">Synology DS224+ - 429,99€</option>
+                    </select>
+                </section>
+                <section>
+                    <h2>Seleccione los Discos</h2>
+                    <label for="storage-type">Tipo de Disco:</label>
+                    <select id="storage-type">
+                        <option value="SSD-Synology-4TB-2400">SSD Synology 4TB - 2400€</option>
+                        <option value="SSD-Samsung-4TB-861.98">SSD Samsung 4TB - 861,98€</option>
+                        <option value="SSD-Samsung-8TB-1779.98">SSD Samsung 8TB - 1779,98€</option>
+                        <option value="HDD-Synology-4TB-265.36">HDD Synology 4TB - 265,36€</option>
+                        <option value="HDD-Synology-6TB-391.66">HDD Synology 6TB - 391,66€</option>
+                        <option value="HDD-Synology-8TB-517.98">HDD Synology 8TB - 517,98€</option>
+                        <option value="HDD-Synology-Fast-4TB-599.98">HDD Synology Rápido 4TB - 599,98€</option>
+                        <option value="HDD-Synology-Fast-8TB-799.98">HDD Synology Rápido 8TB - 799,98€</option>
+                        <option value="HDD-WD-6TB-549.98">HDD WD 6TB - 549,98€</option>
+                        <option value="HDD-WD-10TB-753.98">HDD WD 10TB - 753,98€</option>
+                        <option value="HDD-WD-12TB-699.98">HDD WD 12TB - 699,98€</option>
+                    </select>
+                    <label for="disk-quantity">Cantidad:</label>
+                    <input type="number" id="disk-quantity" min="1" value="1">
+                </section>
+                <section>
+                    <h2>Seleccione los Servicios</h2>
+                    <label>
+                        <input type="checkbox" id="initial-pack" value="100">
+                        Pack Inicial: Compra de materiales, montaje, configuración inicial, tutorial.
+                    </label>
+                    <label for="initial-pack-price">Precio:</label>
+                    <input type="number" id="initial-pack-price" min="100" max="150" value="100">
+                    
+                    <label>
+                        <input type="checkbox" id="maintenance-pack" value="25">
+                        Pack de Mantenimiento Mensual: Mantenimiento remoto/presencial, atención al cliente, investigación de funcionalidades.
+                    </label>
+                    <label for="maintenance-pack-price">Precio:</label>
+                    <input type="number" id="maintenance-pack-price" min="25" max="50" value="25">
+
+                    <label>
+                        <input type="checkbox" id="personalization-pack">
+                        Personalización del Sistema: Personalización de carpetas, contenidos, sistema gestor.
+                    </label>
+                    <label for="personalization-hours">Horas:</label>
+                    <input type="number" id="personalization-hours" min="1" value="1">
+                </section>
+                <section>
+                    <p id="total-price">Precio Total: 0€</p>
+                    <button type="submit">Ver Resumen</button>
+                </section>
+            </form>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

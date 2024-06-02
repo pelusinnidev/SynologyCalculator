@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Configuración</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resumen de tu Configuración Synology NAS</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Detalles de la Configuración</h2>
+                <ul id="summary-list">
+                    <!-- Resumen se rellenará aquí -->
+                </ul>
+                <p id="final-price">Precio Total: 0€</p>
+                <p>Le entra un primer mes de mantenimiento + dudas gratis.</p>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const summaryData = JSON.parse(localStorage.getItem('summaryData'));
+            if (summaryData) {
+                document.getElementById('summary-list').innerHTML = `
+                    <li>Modelo NAS: ${summaryData.nasModel}</li>
+                    <li>Tipo de Disco: ${summaryData.storageType}</li>
+                    <li>Cantidad de Discos: ${summaryData.diskQuantity}</li>
+                    <li>Pack Inicial: ${summaryData.initialPack}</li>
+                    <li>Pack de Mantenimiento: ${summaryData.maintenancePack}</li>
+                    <li>Personalización del Sistema: ${summaryData.personalizationPack}</li>
+                `;
+                document.getElementById('final-price').textContent = `Precio Total: ${summaryData.totalPrice}`;
+            }
+        });
+    </script>
+</body>
+</html>
